@@ -88,4 +88,12 @@ else
     end
 end)
 
+-- SettingsPage
+local SettingsPage = TakoyakiX:addPage("Settings", 4483345737)
+local TakoyakiXSection = SettingsPage:addSection("Takoyaki X")
+
+TakoyakiXSection:addButton("Destroy Takoyaki X", function()
+game:GetService("CoreGui")["Takoyaki X"]:Destroy()
+end)
+
 TakoyakiX:SelectPage(TakoyakiX.pages[2], true)
