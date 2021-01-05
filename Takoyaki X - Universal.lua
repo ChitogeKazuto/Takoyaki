@@ -96,4 +96,4 @@ TakoyakiXSection:addButton("Destroy Takoyaki X", function()
 game:GetService("CoreGui")["Takoyaki X"]:Destroy()
 end)
 
-TakoyakiX:SelectPage(TakoyakiX.pages[2], true)
+TakoyakiX:SelectPage(TakoyakiX.pages[3], true)
