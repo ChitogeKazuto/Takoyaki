@@ -69,6 +69,59 @@ TeleportSection:addButton("Teleport To Player", function()
     game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Players")[_G.PlayerName].Character.HumanoidRootPart.CFrame
 end)
 
+local JumpSection = MiscPage:addSection("Jump")
+
+local flyjump
+JumpSection:addToggle("Fly Jump", false, function(Value)
+    if Value == true then
+	if flyjump then flyjump:Disconnect() end
+	flyjump = game:GetService("UserInputService").JumpRequest:Connect(function(Jump)
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+    end)
+else
+    if flyjump then flyjump:Disconnect() end
+end
+end)
+
+local NoClipSection = MiscPage:addSection("No Clip")
+
+NoClipSection:addToggle("No Clip", false, function(Value)
+noclip = true 
+    game:GetService('RunService').Stepped:connect(function()
+    if noclip then
+    game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+        end
+        end)
+    if Value == true then
+        noclip = true
+    else
+        noclip = false 
+    end
+end)
+
+NoClipSection:addToggle("Advance No Clip", false, function(Value)
+local Noclipping = nil
+Clip = false
+
+if Value == true then
+local function NoclipLoop()
+		if Clip == false and game:GetService("Players").LocalPlayer.Character ~= nil then
+			for _, child in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
+				if child:IsA("BasePart") and child.CanCollide == true and child.Name ~= floatName then
+					child.CanCollide = false
+				end
+			end
+		end
+    end
+Noclipping = game:GetService('RunService').Stepped:Connect(NoclipLoop)
+else
+    if Noclipping then
+		Noclipping:Disconnect()
+	end
+    Clip = true
+end
+end)
+
 local FullBrightSection = MiscPage:addSection("FullBright")
 
 FullBrightSection:addToggle("FullBright", false, function(Value)
