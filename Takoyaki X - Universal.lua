@@ -145,7 +145,7 @@ end)
 local SettingsPage = TakoyakiX:addPage("Settings", 4483345737)
 local TakoyakiXSection = SettingsPage:addSection("Takoyaki X")
 
-TakoyakiXSection:addKeybind("Toggle Keybind", Enum.KeyCode.One, function()
+TakoyakiXSection:addKeybind("Toggle Keybind", Enum.KeyCode.RightControl, function()
     TakoyakiX:toggle()
 end)
 
