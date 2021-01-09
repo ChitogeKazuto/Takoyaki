@@ -57,6 +57,20 @@ JumpPowerSection:addToggle("JumpPower", false, function(Value)
     end
 end)
 
+-- ScriptsPage
+local ScriptsPage = TakoyakiX:addPage("Scripts", 4370341699)
+local UniversalScriptsSection = ScriptsPage:addSection("Universal Scripts")
+
+UniversalScriptsSection:addButton("Ctrl+Click TP", function()
+local Plr = game:GetService("Players").LocalPlayer
+local Mouse = Plr:GetMouse() 
+    Mouse.Button1Down:connect(function()
+        if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl) then return end
+            if not Mouse.Target then return end
+        Plr.Character:MoveTo(Mouse.Hit.p)
+        end)
+end)
+
 -- MiscPage
 local MiscPage = TakoyakiX:addPage("Misc", 3944704135)
 local TeleportSection = MiscPage:addSection("Teleport")
