@@ -153,12 +153,4 @@ TakoyakiXSection:addButton("Destroy Takoyaki X", function()
 game:GetService("CoreGui")["Takoyaki X"]:Destroy()
 end)
 
-local ThemeSection = SettingsPage:addSection("Themes")
-
-for theme, color in pairs(themes) do
-ThemeSection:addColorPicker(theme, color, function(color3)
-    TakoyakiX:setTheme(theme, color3)
-    end)
-end
-
 TakoyakiX:SelectPage(TakoyakiX.pages[1], true)
