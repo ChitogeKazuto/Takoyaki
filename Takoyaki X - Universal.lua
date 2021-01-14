@@ -71,6 +71,21 @@ local Mouse = Plr:GetMouse()
         end)
 end)
 
+local AdminScriptsSection = ScriptsPage:addSection("Admin Scripts")
+
+AdminScriptsSection:addButton("Infinite Yield", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+end)
+
+AdminScriptsSection:addButton("CMD X", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+end)
+
+AdminScriptsSection:addButton("Reviz", function()
+    loadstring(game:HttpGet(('https://pastebin.com/raw/ibFPdiF7'),true))()
+end)
+
+
 -- MiscPage
 local MiscPage = TakoyakiX:addPage("Misc", 3944704135)
 local TeleportSection = MiscPage:addSection("Teleport")
