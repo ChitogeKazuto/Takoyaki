@@ -33,7 +33,7 @@ local WalkSpeedSection = LocalPlayerPage:addSection("WalkSpeed")
 WalkSpeedSection:addSlider("Speed", WalkSpeedSettings.NSpeed, 0, 300, function(Value)
     _G.Speed = Value
 end)
-WalkSpeedSection:addToggle("WalkSpeed", false, function(Value)
+WalkSpeedSection:addToggle("Enable WalkSpeed", false, function(Value)
     _G.WalkSpeed = Value
     while _G.WalkSpeed do wait()
         game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = _G.Speed
@@ -47,7 +47,7 @@ local JumpPowerSection = LocalPlayerPage:addSection("JumpPower")
 JumpPowerSection:addSlider("Jump", JumpPowerSettings.NJump, 0, 300, function(Value)
     _G.Jump = Value
 end)
-JumpPowerSection:addToggle("JumpPower", false, function(Value)
+JumpPowerSection:addToggle("Enable JumpPower", false, function(Value)
     _G.JumpPower = Value
     while _G.JumpPower do wait()
         game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = _G.Jump
