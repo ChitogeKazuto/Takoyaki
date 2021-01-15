@@ -12,7 +12,7 @@ local dragging, dragInput, dragStart, startPos, dragObject
 local blacklistedKeys = { --add or remove keys if you find the need to
 	Enum.KeyCode.Unknown,Enum.KeyCode.W,Enum.KeyCode.A,Enum.KeyCode.S,Enum.KeyCode.D,Enum.KeyCode.Slash,Enum.KeyCode.Tab,Enum.KeyCode.Backspace,Enum.KeyCode.Escape
 }
-local whitelistedMouseinputs = {
+local whitelistedMouseinputs = { --add or remove mouse inputs if you find the need to
 	Enum.UserInputType.MouseButton1,Enum.UserInputType.MouseButton2,Enum.UserInputType.MouseButton3
 }
 
@@ -40,6 +40,7 @@ local function update(input)
 	dragObject:TweenPosition(UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, yPos), "Out", "Quint", 0.1, true)
 end
 
+--From: https://devforum.roblox.com/t/how-to-create-a-simple-rainbow-effect-using-tweenService/221849/2
 local chromaColor
 local rainbowTime = 5
 spawn(function()
@@ -1672,3 +1673,5 @@ inputService.InputChanged:connect(function(input)
 		update(input)
 	end
 end)
+
+return library
